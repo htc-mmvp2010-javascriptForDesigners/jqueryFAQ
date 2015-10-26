@@ -32,9 +32,27 @@
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript">
         ////could use toggle which is show/hide but that would not allow for the graphics
-        $(document).ready(function () {
-          
-        }); // end of ready()
+    $(document).ready(function () {
+            ///////ADDED FOR HIDE SHOW
+//    $(document).ready(function(){
+//        $("p").hide();
+//    });
+//    $(".open").click(function(){
+//        $("p").show();
+//    });
+        
+        $('.main').find('.open').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".answer").not($(this).next()).slideUp('fast');
+        
+
+
+            /////////////END ADD FOR HIDE SHOW
+        }); });// end of ready()
     </script>
 </head>
 
