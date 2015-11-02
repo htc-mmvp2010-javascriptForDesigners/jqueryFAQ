@@ -32,28 +32,47 @@
     <script type="text/javascript" src="jquery-1.11.1.js"></script>
     <script type="text/javascript">
         ////could use toggle which is show/hide but that would not allow for the graphics
+        ///BEGIN CLASS CODE
     $(document).ready(function () {
-            /////HIDE/SHOW WITH TOGGLE
-            /////WHY DO IMAGES NOT WORK WITH                    TOGGLE?
+        $('.answer').hide();
+        $('.main h2').click(function(){
+            //shows answer
+           
+            var $currentAnswer = $(this).next(".answer");
+            //check if visible
+        if ($currentAnswer.is(' :hidden')){
+            $currentAnswer.slideDown();
+            //changes image icon
+            $(this).removeClass("open");
+            $(this).addClass("close");
+    }else{
+        $currentAnswer.slideUp();
+        $(this).removeClass("close");
+        $(this).addClass("open");
+    }
+    });
+    });
+        //END CLASS CODE
+/////////////THIS IS BASIC HIDE/SHOW WITH TOGGLE
+/////QUESTION: WHY DO IMAGES NOT WORK WITH                    TOGGLE?
 //    $(document).ready(function(){
 //        $("p").hide();
 //    });
 //    $(".open").click(function(){
 //        $("p").toggle();
 //    });
-        
-        $('.main').find('.open').click(function(){
-
-      //Expand or collapse this panel
-      $(this).next().slideToggle('fast');
+   ///////////THIS IS THE END OF TOGGLE CODE   
+        //////THIS IS THE BEGINNING OF CODE FOUND ONLINE
+//        $('.main').find('.open').click(function(){
+//      //Expand or collapse this panel
+//      $(this).next().slideToggle('fast');
 
       //Hide the other panels
-      $(".answer").not($(this).next()).slideUp('fast');
+//      $(".answer").not($(this).next()).slideUp('fast');
         
-
-
             
-        }); });// end of ready()
+//        }); });// end of ready()
+    //////////////THIS IS THE END OF CODE FOUND ONLINE
     </script>
 </head>
 
