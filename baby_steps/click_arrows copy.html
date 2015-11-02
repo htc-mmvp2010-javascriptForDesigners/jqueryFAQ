@@ -33,6 +33,29 @@
     <script type="text/javascript">
         ////could use toggle which is show/hide but that would not allow for the graphics
         $(document).ready(function () {
+            $('.answer').hide();
+            $
+
+            $('.main h2').click(function(){
+
+            var $currentAnswer = $(this).next('.answer');
+
+                if ($currentAnswer.is(':hidden')){
+
+                $('.main h2 answer').addClass('open');
+                $('.main h2 answer').slideUp();
+                $currentAnswer.slideDown();
+                $(this).removeClass('open');
+                $(this).addClass('close');
+
+                }else {
+
+                    $('.answer').slideUp();
+                    $(this).removeClass('close');
+                    $(this).addClass('open');
+                }
+   
+            });
           
         }); // end of ready()
     </script>
