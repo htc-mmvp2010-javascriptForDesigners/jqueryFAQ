@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <!--Author: Anthony Emmons
+        Exercise: JQuery FAQ-->
     <title>FAQ</title>
     <style type="text/css">
         body {
@@ -33,7 +35,34 @@
     <script type="text/javascript">
         ////could use toggle which is show/hide but that would not allow for the graphics
         $(document).ready(function () {
-          
+        //hide all the answers
+            $(".answer").hide();
+        //make the questions clickable
+            $(".main h2").click(function () {
+        //revea; tje answer       
+            // $(this).next(".answer").slideDown();
+            var $currentAnswer = $(this).next(".answer");
+        //check if the answer is currently visible
+            if ($currentAnswer.is(':hidden')){
+                // if ($('.answer').is(':visible')){
+                //     $
+                // }
+                //tidy the answers
+                $('.answer').slideUp();
+                $(this).removeClass("close");
+                $(this).addClass("open"); 
+
+                $currentAnswer.slideDown();
+                //change the image icon
+                $(this).removeClass("open");
+                $(this).addClass("close");   
+            }else {
+                $currentAnswer.slideUp();
+                //change the image icon
+                $(this).removeClass("close");
+                $(this).addClass("open"); 
+            }
+          });//end of click function
         }); // end of ready()
     </script>
 </head>
